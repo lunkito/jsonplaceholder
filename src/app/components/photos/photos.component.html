@@ -1,0 +1,11 @@
+<h2>Photos component</h2>
+
+<input type="text" [(ngModel)]="input" (keyup)="inputChange()">
+<span *ngIf="selected">
+   Numero de fotos: {{ selected.length }}
+</span>
+<ul>
+   <li *ngFor="let photo of selected">
+      <a routerLink="photo/{{photo.id}}"> {{ photo.title }} </a>
+   </li>
+</ul>

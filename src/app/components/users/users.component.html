@@ -1,0 +1,25 @@
+<h2>Users component</h2>
+
+<input type="text" [(ngModel)]="input" (ngModelChange)="filter()">
+<table>
+  <thead>
+    <th>Name</th>
+    <th>User name</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Web</th>
+    <th>Company</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of selected">
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.address }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.website }}</td>
+      <td>{{ user.company }}</td>
+    </tr>
+  </tbody>
+</table>
