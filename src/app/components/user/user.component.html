@@ -1,0 +1,12 @@
+<h2>User component</h2>
+<div *ngIf="user">
+  <h4>{{ user.name }}</h4>
+  <ul>
+    <li>{{ user.address.city }}</li>
+    <li>{{ user.company.name }}</li>
+    <li>{{ user.email }}</li>
+    <li>{{ user.phone }}</li>
+    <li>{{ user.username }}</li>
+    <li>{{ user.website }}</li>
+  </ul>
+</div>

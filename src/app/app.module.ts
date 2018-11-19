@@ -14,6 +14,8 @@ import { PhotosComponent } from './components/photos/photos.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { UsersComponent } from './components/users/users.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { UserComponent } from './components/user/user.component';
+import { PhotoComponent } from './components/photo/photo.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,8 +23,10 @@ const routes: Routes = [
   { path: 'comments', component: CommentsComponent },
   { path: 'albums', component: AlbumsComponent },
   { path: 'photos', component: PhotosComponent },
+  { path: 'photos/:id', component: PhotoComponent },
   { path: 'todos', component: TodosComponent },
-  { path: 'users', component: UsersComponent }
+  { path: 'users', component: UsersComponent },
+  { path: 'users/:id', component: UserComponent },
 ];
 
 @NgModule({
@@ -34,7 +38,9 @@ const routes: Routes = [
     PhotosComponent,
     TodosComponent,
     UsersComponent,
-    PostsComponent
+    PostsComponent,
+    UserComponent,
+    PhotoComponent
   ],
   imports: [
     BrowserModule,

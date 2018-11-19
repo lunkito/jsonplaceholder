@@ -1,17 +1,18 @@
 table {
-   border-collapse: collapse;
+   /* border-collapse: collapse; */
 }
 
-th {
-   text-align: left;
+th { text-align: left; }
+th, tr:nth-child(even) { background: #ddd; }
+tr:nth-child(odd) { background: #fff; }
+td, th { padding: .5em; }
+
+tr:hover {
+   cursor: pointer;
+   background: #333;
+   color: #fff;
 }
 
-th,
-tr:nth-child(even) {
-   background: #ddd;
-}
-
-td,
-th {
-   padding: .5em;
+a {
+   text-decoration: none;
 }

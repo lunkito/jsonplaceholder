@@ -12,14 +12,14 @@
     <th>Company</th>
   </thead>
   <tbody>
-    <tr *ngFor="let user of selected">
+    <tr *ngFor="let user of selected" [routerLink]="['/users', user.id]">
       <td>{{ user.name }}</td>
       <td>{{ user.username }}</td>
       <td>{{ user.email }}</td>
-      <td>{{ user.address }}</td>
+      <td>{{ user.address.city }}</td>
+      <td>{{ user.company.name }}</td>
       <td>{{ user.phone }}</td>
       <td>{{ user.website }}</td>
-      <td>{{ user.company }}</td>
     </tr>
   </tbody>
 </table>

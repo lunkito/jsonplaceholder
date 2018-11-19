@@ -11,11 +11,13 @@ export class PhotosComponent implements OnInit {
 
   public selected: Photo[];
   public photos: Photo[];
+  public photos$;
   public input: string;
 
   constructor(private service: JsonService) {}
 
   ngOnInit() {
+    this.photos$ = this.service.getPhotos();
     this.service
       .getPhotos()
       .then(response => {

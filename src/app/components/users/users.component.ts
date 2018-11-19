@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { JsonService } from '../../services/json.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -9,10 +10,10 @@ import { JsonService } from '../../services/json.service';
 })
 export class UsersComponent implements OnInit {
   public users: User[];
-  public input: string;
   public selected: User[];
+  public input: string;
 
-  constructor(private service: JsonService) {}
+  constructor(private service: JsonService, private router: Router) {}
 
   ngOnInit() {
     this.service

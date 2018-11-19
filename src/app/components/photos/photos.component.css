@@ -1,10 +1,18 @@
 ul {
    margin: 0;
    padding: 0;
+   list-style: none;
+   display: flex;
+   flex-wrap: wrap;
 }
 
-a {
-   text-decoration: none;
-   padding: .5em 0;
-   display: inline-block;
+li {
+   box-sizing: border-box;
+   border: 1px solid #ccc;
+   flex-grow: 1;
+}
+
+.card {
+   cursor: pointer;
+   padding: .5em;
 }
