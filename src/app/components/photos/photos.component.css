@@ -8,11 +8,18 @@ ul {
 
 li {
    box-sizing: border-box;
-   border: 1px solid #ccc;
+   /* border: 1px solid #ccc; */
    flex-grow: 1;
 }
 
 .card {
    cursor: pointer;
    padding: .5em;
+   text-align: center;
+   margin: 8px;
+   box-shadow: 0 0 6px grey;
+}
+
+.card:hover {
+   box-shadow: 0 0 18px grey;
 }

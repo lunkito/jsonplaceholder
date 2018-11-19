@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Photo } from 'src/app/models/photo';
 import { JsonService } from 'src/app/services/json.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-photos',
@@ -11,21 +12,28 @@ export class PhotosComponent implements OnInit {
 
   public selected: Photo[];
   public photos: Photo[];
-  public photos$;
+  public photos$: Observable<Photo[]>;
   public input: string;
 
   constructor(private service: JsonService) {}
 
   ngOnInit() {
-    this.photos$ = this.service.getPhotos();
+    this.photos$ = this.service.getPhotosObservable();
     this.service
       .getPhotos()
       .then(response => {
         return response.json();
       })
       .then((photos: Photo[]) => {
-        this.photos = photos;
-        this.selected = photos;
+        const result = photos.map(photo => {
+          photo.title = photo.title
+            .split(' ', 2)
+            .join(' ');
+          return photo;
+        });
+        
+        this.photos = result;
+        this.selected = result;
       });
   }
 

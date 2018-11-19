@@ -5,10 +5,10 @@
    Numero de fotos: {{ selected.length }}
 </span>
 <ul>
-   <li *ngFor="let photo of photos | async">
+   <li *ngFor="let photo of selected | slice:0:99">
       <div class="card" [routerLink]="['/photos', photo.id]">
-         <div class="title">{{ photo.title | slice }}</div>
-         <!-- <img src="{{photo.thumbnailUrl}}" alt="thumbnail"> -->
+         <h4 class="card__title">{{ photo.title }}</h4>
+         <img class="card__image" src="{{photo.thumbnailUrl}}" alt="thumbnail"> 
       </div>
    </li>
 </ul>

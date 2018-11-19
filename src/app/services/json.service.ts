@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Photo } from '../models/photo';
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +12,20 @@ import { HttpClient } from '@angular/common/http';
     return fetch('https://jsonplaceholder.typicode.com/users');
   }
 
+  getUserBy(id: number) {
+    return fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+  }
+
   getPhotos() {
     return fetch('https://jsonplaceholder.typicode.com/photos');
   }
 
-  getUserBy(id: number) {
-    return fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+  getPhotosObservable() {
+    return this.http
+      .get<Photo[]>('https://jsonplaceholder.typicode.com/photos');
   }
-  // getUsers(): Observable<User[]> {
-  //   return this.http
-  //     .get<User[]>('https://jsonplaceholder.typicode.com/users');
-  // }
+
+  getPhotoBy(id: number) {
+    return this.http.get<Photo>(`https://jsonplaceholder.typicode.com/photos/${id}`);
+  }
 }

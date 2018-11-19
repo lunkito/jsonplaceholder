@@ -1,3 +1,6 @@
-<p>
-  photo works!
-</p>
+<div class="card">
+  <h2 class="card__title">{{ (photo$ | async)?.title }}</h2>
+  <img [src]="(photo$ | async)?.url" alt="" class="card__img">
+  <div class="id">ID: {{ (photo$ | async)?.id }}</div>
+  <div class="id">Album ID: {{ (photo$ | async)?.albumId }}</div>
+</div>
