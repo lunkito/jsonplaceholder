@@ -1,1 +1,8 @@
 <h2>Todos component</h2>
+
+<ul class="todos">
+  <li class="todo" *ngFor="let todo of todos$ | async">
+    <input type="checkbox" [checked]="todo.completed" disabled>
+    <div class="todo__body">{{ todo.title }}</div>
+  </li>
+</ul>

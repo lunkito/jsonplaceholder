@@ -1,17 +1,16 @@
 nav {
-   border-bottom: 1px solid #666;
- }
- 
- ul {
-   list-style: none;
-   margin: 0;
-   padding: 0;
-   display: flex;
- }
- 
- a {
-   text-decoration: none;
-   padding: 1em;
-   display: block;
- }
- 
+  border-bottom: 1px solid #666;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+  padding: 1em;
+  display: block;
+}

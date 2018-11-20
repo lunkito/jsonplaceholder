@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Post } from 'src/app/models/post';
+import { JsonService } from 'src/app/services/json.service';
 
 @Component({
   selector: 'app-posts',
@@ -6,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  constructor() {}
+  
+  public posts$: Observable<Post[]>;
 
-  ngOnInit() {}
+  constructor(private service: JsonService) {}
+
+  ngOnInit() {
+    this.posts$ = this.service.getPosts();
+  }
 }

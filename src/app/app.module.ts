@@ -16,10 +16,12 @@ import { UsersComponent } from './components/users/users.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { UserComponent } from './components/user/user.component';
 import { PhotoComponent } from './components/photo/photo.component';
+import { PostComponent } from './components/post/post.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'posts', component: PostsComponent },
+  { path: 'posts/:id', component: PostComponent },
   { path: 'comments', component: CommentsComponent },
   { path: 'albums', component: AlbumsComponent },
   { path: 'photos', component: PhotosComponent },
@@ -40,7 +42,8 @@ const routes: Routes = [
     UsersComponent,
     PostsComponent,
     UserComponent,
-    PhotoComponent
+    PhotoComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,

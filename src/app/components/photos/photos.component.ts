@@ -38,7 +38,7 @@ export class PhotosComponent implements OnInit {
   }
 
   inputChange() {
-    this.selected = this.photos.filter(photo => {
+    this.selected = this.photos.filter(photo => {   
       return photo.title.includes(this.input);
     });
   }
