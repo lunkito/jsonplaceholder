@@ -1,6 +1,6 @@
 <h2>Users component</h2>
 
-<input type="text" [(ngModel)]="input" (ngModelChange)="filter()">
+<input type="text" [(ngModel)]="input" (ngModelChange)="filterByNameOrUsername()">
 <table>
   <thead>
     <th>Name</th>
@@ -12,7 +12,10 @@
     <th>Company</th>
   </thead>
   <tbody>
-    <tr *ngFor="let user of selected; even as e; odd as o" [ngClass]="{ 'even': e, 'odd': o }" [routerLink]="['/users', user.id]">
+    <tr
+    *ngFor="let user of selected; even as e; odd as o"
+    [ngClass]="{ 'even': e, 'odd': o }"
+    [routerLink]="['/users', user.id]">
       <td>{{ user.name }}</td>
       <td>{{ user.username }}</td>
       <td>{{ user.email }}</td>

@@ -13,7 +13,7 @@ export class UsersComponent implements OnInit {
   public selected: User[];
   public input: string;
 
-  constructor(private service: JsonService, private router: Router) {}
+  constructor(private service: JsonService) {}
 
   ngOnInit() {
     this.service
@@ -26,9 +26,10 @@ export class UsersComponent implements OnInit {
       .catch(err => console.log(err));
   }
 
-  filter() {
+  filterByNameOrUsername() {
     this.selected = this.users.filter(user => {
-      return user.name.includes(this.input);
+      const regex = new RegExp(this.input, 'i');
+      return user.name.match(regex) || user.username.match(regex);
     });
   }
 }
