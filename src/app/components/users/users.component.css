@@ -1,10 +1,8 @@
-table {
-   /* border-collapse: collapse; */
-}
-
 th { text-align: left; }
-th, tr:nth-child(even) { background: #ddd; }
-tr:nth-child(odd) { background: #fff; }
+/* th, tr:nth-child(even) { background: #ddd; }
+tr:nth-child(odd) { background: #fff; } */
+.even { background: #aaa; }
+.odd { background: #ddd; }
 td, th { padding: .5em; }
 
 tr:hover {

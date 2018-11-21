@@ -44,6 +44,10 @@ import { Todo } from '../models/todo';
     return this.http.get<Comment[]>(`https://jsonplaceholder.typicode.com/comments`);
   }
 
+  getCommentsByPost(id: number) {
+    return this.http.get<Comment[]>(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
+  }
+
   getTodos() {
     return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos');
   }

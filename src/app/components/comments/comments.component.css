@@ -9,7 +9,7 @@ ul {
 }
 
 .post {
-  margin-bottom: 64px;
+  margin-bottom: 72px;
 }
 /* 
 .post::after {
@@ -21,13 +21,21 @@ ul {
 } */
 
 .post__title {
-  display: flex;
+  margin-bottom: 8px;
+}
 
+.post__title:hover {
+  cursor: pointer;
+}
+
+.separator {
+  font-weight: bold;
 }
 
 .comments {
-  margin-top: 24px;
   line-height: 1.3;
+  margin-top: 24px;
+  margin-left: 32px;
 }
 
 .comment__title {

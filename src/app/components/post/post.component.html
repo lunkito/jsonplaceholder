@@ -1,7 +1,9 @@
 <h2>Post component</h2>
 
-<div class="post">
-  <h4 class="post__title">{{ (post$ | async)?.title }}</h4>
-  <div class="post__body">{{ (post$ | async)?.body }}</div>
-  <div class="post__user">User ID: {{ (post$ | async)?.userId }}</div>
+<div class="post" *ngIf="post$ | async; let post; else loading">
+  <h4 class="post__title">{{ post.title }}</h4>
+  <div class="post__body">{{ post.body }}</div>
+  <a class="post__user" [routerLink]="['/users', post.userId]">User ID: {{ (post$ | async)?.userId }}</a>
 </div>
+
+<ng-template #loading></ng-template>
