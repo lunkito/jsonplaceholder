@@ -19,7 +19,9 @@ export class UserComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
     this.user$ = this.service
-      .getUserBy(id as number)
-      .then<User>(response => { return response.json(); });
+      .getUserBy(id)
+      .then<User>(response => {
+        return response.json();
+      });
   }
 }

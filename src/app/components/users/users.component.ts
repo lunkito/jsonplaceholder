@@ -9,26 +9,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  public users: User[];
-  public selected: User[];
-  public input: string;
+  public allUsers: User[];
+  public filteredUsers: User[];
+  public nameOrUsername: string;
 
   constructor(private service: JsonService) {}
 
   ngOnInit() {
+    this.fetchUsers();
+  }
+
+  private fetchUsers() {
     this.service
       .getUsers()
       .then(response => { return response.json(); })
       .then((users: User[]) => {
-        this.users = users;
-        this.selected = users;
+        this.allUsers = users;
+        this.filteredUsers = users;
       })
       .catch(err => console.log(err));
   }
 
   filterByNameOrUsername() {
-    this.selected = this.users.filter(user => {
-      const regex = new RegExp(this.input, 'i');
+    this.filteredUsers = this.allUsers.filter(user => {
+      const regex = new RegExp(this.nameOrUsername, 'i');
       return user.name.match(regex) || user.username.match(regex);
     });
   }

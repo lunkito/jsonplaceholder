@@ -18,11 +18,11 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit() {
     this.posts$ = this
-      .awaitPostsAndComments()
+      .zipPostsAndComments()
       .pipe(map(this.addCommentsToPosts()));
   }
 
-  private awaitPostsAndComments() {
+  private zipPostsAndComments() {
     return zip(this.service.getPosts(), this.service.getComments());
   }
 

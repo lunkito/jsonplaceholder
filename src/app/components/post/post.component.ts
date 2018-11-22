@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JsonService } from 'src/app/services/json.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+import { mergeMap, map } from 'rxjs/operators';
 import { Post } from 'src/app/models/post';
 import { Comment } from 'src/app/models/comment';
 

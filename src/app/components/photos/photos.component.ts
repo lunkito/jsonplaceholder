@@ -18,22 +18,19 @@ export class PhotosComponent implements OnInit {
   constructor(private service: JsonService) {}
 
   ngOnInit() {
-    this.photos$ = this.service.getPhotosObservable();
     this.service
       .getPhotos()
-      .then(response => {
-        return response.json();
-      })
+      .then(response => response.json())
       .then((photos: Photo[]) => {
-        const result = photos.map(photo => {
+        photos = photos.map(photo => {
           photo.title = photo.title
             .split(' ', 2)
             .join(' ');
           return photo;
         });
         
-        this.photos = result;
-        this.selected = result;
+        this.photos = photos;
+        this.selected = photos;
       });
   }
 

@@ -1,10 +1,14 @@
 <h2>User component</h2>
-<h4>{{ (user$ | async)?.name || 'Loading...' }}</h4>
-<ul>
-  <li><span>City:</span> {{ (user$ | async)?.address.city }}</li>
-  <li><span>Company:</span> {{ (user$ | async)?.company.name }}</li>
-  <li><span>Email:</span> {{ (user$ | async)?.email }}</li>
-  <li><span>Phone:</span> {{ (user$ | async)?.phone }}</li>
-  <li><span>Username:</span> {{ (user$ | async)?.username }}</li>
-  <li><span>Web:</span> {{ (user$ | async)?.website }}</li>
-</ul>
+<div class="user" *ngIf="(user$ | async); let user; else loading">
+  <h4>{{ user.name }}</h4>
+  <ul>
+    <li><span>City:</span> {{ user.address.city }}</li>
+    <li><span>Company:</span> {{ user.company.name }}</li>
+    <li><span>Email:</span> {{ user.email }}</li>
+    <li><span>Phone:</span> {{ user.phone }}</li>
+    <li><span>Username:</span> {{ user.username }}</li>
+    <li><span>Web:</span> {{ user.website }}</li>
+  </ul>
+</div>
+
+<ng-template #loading>Loading...</ng-template>
