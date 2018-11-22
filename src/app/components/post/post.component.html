@@ -6,4 +6,12 @@
   <a class="post__user" [routerLink]="['/users', post.userId]">User ID: {{ (post$ | async)?.userId }}</a>
 </div>
 
-<ng-template #loading></ng-template>
+<div class="comments" *ngIf="comments$ | async; let comments; else loading">
+<ul>
+  <li *ngFor="let comment of comments">
+    {{ comment.body }}
+  </li>
+</ul>
+</div>
+
+<ng-template #loading>Loading...</ng-template>

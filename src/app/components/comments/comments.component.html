@@ -1,7 +1,7 @@
 <h2>Comments component</h2>
 
 <ul class="posts">
-  <li class="post" *ngFor="let post of posts">
+  <li class="post" *ngFor="let post of posts$ | async">
     <h3 class="post__title" [routerLink]="['/posts', post.id]">
       Post {{ post.id }}.  {{ post.title | titlecase }}
     </h3>
