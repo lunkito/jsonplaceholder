@@ -13,6 +13,8 @@ export class UsersComponent implements OnInit {
   public filteredUsers: User[];
   public nameOrUsername: string;
 
+  public displayedColumns: string[] = ['name', 'username', 'email', 'address.city', 'company.name'];
+
   constructor(private service: JsonService) {}
 
   ngOnInit() {

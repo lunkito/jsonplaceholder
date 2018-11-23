@@ -34,9 +34,9 @@ export class PhotosComponent implements OnInit {
       });
   }
 
-  inputChange() {
+  applyFilter(value: string) {
     this.selected = this.photos.filter(photo => {   
-      return photo.title.includes(this.input);
+      return photo.title.includes(value);
     });
   }
 }

@@ -1,11 +1,11 @@
 <h2>Photos component</h2>
 
-<input type="text" [(ngModel)]="input" (keyup)="inputChange()">
+<input type="text" (keyup)="applyFilter($event.target.value)">
 <span *ngIf="selected">
    Numero de fotos: {{ selected.length }}
 </span>
 <ul>
-   <li *ngFor="let photo of selected | slice:0:99">
+   <li *ngFor="let photo of selected | slice:0:100">
       <!-- <app-photo></app-photo> -->
       <div class="card" [routerLink]="['/photos', photo.id]">
          <h4 class="card__title">{{ photo.title }}</h4>

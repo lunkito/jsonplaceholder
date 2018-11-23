@@ -1,28 +1,62 @@
 <h2>Users component</h2>
 
 <input type="text" [(ngModel)]="nameOrUsername" (ngModelChange)="filterByNameOrUsername()">
-<table>
+<table class="table mat-elevation-z2">
   <thead>
-    <th>Name</th>
-    <th>User name</th>
-    <th>Email</th>
-    <th>Address</th>
-    <th>Phone</th>
-    <th>Web</th>
-    <th>Company</th>
+    <th class="th">Name</th>
+    <th class="th">User name</th>
+    <th class="th">Email</th>
+    <th class="th">Address</th>
+    <th class="th">Phone</th>
+    <th class="th">Web</th>
+    <th class="th">Company</th>
   </thead>
   <tbody>
     <tr
     *ngFor="let user of filteredUsers; even as isEven; odd as isOdd"
     [ngClass]="{ 'even': isEven, 'odd': isOdd }"
+    class="tr"
     [routerLink]="['/users', user.id]">
-      <td>{{ user.name }}</td>
-      <td>{{ user.username }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.address.city }}</td>
-      <td>{{ user.company.name }}</td>
-      <td>{{ user.phone }}</td>
-      <td>{{ user.website }}</td>
+      <td class="td">{{ user.name }}</td>
+      <td class="td">{{ user.username }}</td>
+      <td class="td">{{ user.email }}</td>
+      <td class="td">{{ user.address.city }}</td>
+      <td class="td">{{ user.company.name }}</td>
+      <td class="td">{{ user.phone }}</td>
+      <td class="td">{{ user.website }}</td>
     </tr>
   </tbody>
+</table>
+
+
+<table mat-table [dataSource]="filteredUsers" class="mat-elevation-z2">
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name. </th>
+    <td mat-cell *matCellDef="let userA"> {{userA.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef> Username. </th>
+    <td mat-cell *matCellDef="let userA"> {{userA.username}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Email. </th>
+    <td mat-cell *matCellDef="let userA"> {{userA.email}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="address.city">
+    <th mat-header-cell *matHeaderCellDef> City. </th>
+    <td mat-cell *matCellDef="let userA"> {{userA.address.city}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="company.name">
+    <th mat-header-cell *matHeaderCellDef> Company. </th>
+    <td mat-cell *matCellDef="let userA"> {{userA.company.name}} </td>
+  </ng-container>
+
+  
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row [routerLink]="['/users', row.id]" *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

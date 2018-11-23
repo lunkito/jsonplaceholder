@@ -1,16 +1,13 @@
-<header>
-  <nav>
-    <ul>
-      <li><a routerLink="">Home</a></li>
-      <li><a routerLink="users">Users</a></li>
-      <li><a routerLink="posts">Posts</a></li>
-      <li><a routerLink="comments">Comments</a></li>
-      <li><a routerLink="albums">Albums</a></li>
-      <li><a routerLink="photos">Photos</a></li>
-      <li><a routerLink="todos">Todos</a></li>
-    </ul>
-  </nav>
-</header>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a routerLink="users" mat-button >Users</a>
+    <a routerLink="posts" mat-button>Posts</a>
+    <a routerLink="comments" mat-button>Comments</a>
+    <a routerLink="albums" mat-button>Albums</a>
+    <a routerLink="photos" mat-button>Photos</a>
+    <a routerLink="todos" mat-button>Todos</a>
+  </mat-toolbar-row>
+</mat-toolbar>
 
 <div style="margin: 24px">
   <router-outlet></router-outlet>
