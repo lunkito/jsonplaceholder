@@ -1,8 +1,8 @@
 .table { border-collapse: collapse; font-weight: lighter; }
 .th { text-align: left; font-weight: bolder; }
 .td, .th { padding: .5em; }
-.even { background: #aaa; }
-.odd { background: #ddd; }
+.even { background: #ccc; }
+.odd { background: #eee; }
 
 .tr:hover {
    cursor: pointer;
