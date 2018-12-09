@@ -20,6 +20,7 @@ import { UserComponent } from './components/user/user.component';
 import { PhotoComponent } from './components/photo/photo.component';
 import { PostComponent } from './components/post/post.component';
 import { HeigthEqualsWidthComponent } from './components/heigth-equals-width/heigth-equals-width.component';
+import { AudioComponent } from './components/audio/audio.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'users/:id', component: UserComponent },
   { path: 'height', component: HeigthEqualsWidthComponent },
+  { path: 'audio', component: AudioComponent },
 ];
 
 @NgModule({
@@ -49,6 +51,7 @@ const routes: Routes = [
     PhotoComponent,
     PostComponent,
     HeigthEqualsWidthComponent,
+    AudioComponent,
   ],
   imports: [
     BrowserModule,

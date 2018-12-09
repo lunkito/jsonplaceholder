@@ -1,0 +1,22 @@
+<audio 
+  id="audio"
+  autoplay
+  [volume]="volume/100"
+  [playbackRate]="speed/100"
+  [muted]="muted" 
+  src="https://p.scdn.co/mp3-preview/75dec79755b05d3a106e7d828ce5423cbd9e7208?cid=92ed57a15a9d488285f45b9ef0c7714a">
+</audio>
+<label>
+  {{ volume }}
+  <input type="range" min="0" max="100" [(ngModel)]="volume"/>
+</label>
+
+<label>
+  {{ speed }}
+  <input type="range" min="50" max="150" [(ngModel)]="speed"/>
+</label>
+
+<label onmousedown="return false;">
+  Mute
+  <input type="checkbox" [(ngModel)]="muted">
+</label>
