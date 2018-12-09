@@ -19,11 +19,9 @@ export class AudioComponent implements OnInit {
 
   handleVolume(event: MouseEvent) {
     if (event.movementX > 0 && this.volume < 1) {
-      console.log('derecha');
       this.volume += 0.01;
     }
-    if (event.movementX < 0 && this.volume > 0) {
-      console.log('izquierda');
+    if (event.movementX < 0  && this.volume > 0) {
       this.volume -= 0.01;
     }
   }
@@ -34,6 +32,15 @@ export class AudioComponent implements OnInit {
     }
     if (event.movementX < 0 && this.speed > 0) {
       this.speed -= 0.01;
+    }
+  }
+
+  handleClickVolume(operator: string) {
+    if (operator === '+' && this.volume < 1) {
+      this.volume += 0.01;
+    }
+    if (operator === '-' && this.volume > 0) {
+      this.volume -= 0.01;
     }
   }
 

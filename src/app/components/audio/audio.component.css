@@ -5,3 +5,10 @@
 
 .volume { background-image: linear-gradient(to right, yellow, orange) }
 .speed { background-image: linear-gradient(to right, cyan, blue) }
+
+.button {
+   padding: 10px 20px;
+   border: 2px solid #333;
+   background: transparent;
+   font-size: 20px;
+}
