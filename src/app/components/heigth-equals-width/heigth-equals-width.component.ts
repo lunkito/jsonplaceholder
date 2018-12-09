@@ -10,16 +10,16 @@ export class HeigthEqualsWidthComponent implements OnInit {
   @ViewChild('ref')
   public child;
   
-  public actualHeight = '100px';
+  public actualHeight;
   
   constructor() { }
   
-  ngOnInit() {  
-    console.log('child');
-    console.log(this.child.nativeElement);
-    console.log(this.child.nativeElement.scrollWidth);
+  ngOnInit() {
     this.actualHeight = this.child.nativeElement.scrollWidth;
-    // this.change.detectChanges();
+  }
+
+  onResize() {
+    this.actualHeight = this.child.nativeElement.scrollWidth;
   }
 
 }
