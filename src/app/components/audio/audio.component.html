@@ -25,6 +25,6 @@
 <div class="hover-control speed" (mousemove)="handleSpeed($event)"></div>
 
 <div class="volume__controls">
-  <button class="button" (click)="handleClickVolume('+')">+</button>
-  <button class="button" (click)="handleClickVolume('-')">-</button>
+  <button onmousedown="return false;" class="button" (click)="handleClickVolume('+')">+</button>
+  <button onmousedown="return false;" class="button" (click)="handleClickVolume('-')">-</button>
 </div>

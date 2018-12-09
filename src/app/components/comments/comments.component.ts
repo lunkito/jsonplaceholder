@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonService } from 'src/app/services/json.service';
-import { Observable, zip, of } from 'rxjs';
-import { map, mergeMap, tap, groupBy } from 'rxjs/operators';
+import { Observable, zip } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Comment } from 'src/app/models/comment';
 import { Post } from 'src/app/models/post';
 
