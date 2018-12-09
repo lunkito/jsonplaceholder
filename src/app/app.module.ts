@@ -19,6 +19,7 @@ import { PostsComponent } from './components/posts/posts.component';
 import { UserComponent } from './components/user/user.component';
 import { PhotoComponent } from './components/photo/photo.component';
 import { PostComponent } from './components/post/post.component';
+import { HeigthEqualsWidthComponent } from './components/heigth-equals-width/heigth-equals-width.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'todos', component: TodosComponent },
   { path: 'users', component: UsersComponent },
   { path: 'users/:id', component: UserComponent },
+  { path: 'height', component: HeigthEqualsWidthComponent },
 ];
 
 @NgModule({
@@ -46,6 +48,7 @@ const routes: Routes = [
     UserComponent,
     PhotoComponent,
     PostComponent,
+    HeigthEqualsWidthComponent,
   ],
   imports: [
     BrowserModule,
