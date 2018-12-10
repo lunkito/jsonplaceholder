@@ -5,6 +5,7 @@
 
 .volume { background-image: linear-gradient(to right, yellow, orange) }
 .speed { background-image: linear-gradient(to right, cyan, blue) }
+.both { height: 300px; background-image: radial-gradient(yellow, orange) }
 
 .button {
    width: 40px;

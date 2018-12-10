@@ -21,8 +21,15 @@
   <input type="checkbox" [(ngModel)]="muted">
 </label>
 
+<h3>Relativos</h3>
 <div class="hover-control volume" (mousemove)="handleVolume($event)"></div>
 <div class="hover-control speed" (mousemove)="handleSpeed($event)"></div>
+
+<h3>Absolutos</h3>
+<div class="hover-control volume" (mousemove)="setAbsoluteVolume($event)"></div>
+<div class="hover-control speed" (mousemove)="setAbsoluteSpeed($event)"></div>
+<h4>Juntos</h4>
+<div class="hover-control both" (mousemove)="setVolumeAndSpeed($event)"></div>
 
 <div class="volume__controls">
   <button onmousedown="return false;" class="button" (click)="handleClickVolume('+')">+</button>

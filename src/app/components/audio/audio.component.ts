@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { log } from 'util';
 
 @Component({
   selector: 'app-audio',
@@ -44,4 +43,16 @@ export class AudioComponent implements OnInit {
     }
   }
 
+  setAbsoluteVolume(event: MouseEvent) {
+    this.volume = event.offsetX / 300;
+  }
+
+  setAbsoluteSpeed(event: MouseEvent) {
+    this.speed = 0.5 + (event.offsetX / 300);
+  }
+
+  setVolumeAndSpeed(event: MouseEvent) {
+    this.setAbsoluteSpeed(event);
+    this.volume = 1 - (event.offsetY / 300);
+  }
 }
