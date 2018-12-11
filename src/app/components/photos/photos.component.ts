@@ -12,7 +12,6 @@ export class PhotosComponent implements OnInit {
 
   public selected: Photo[];
   public photos: Photo[];
-  public photos$: Observable<Photo[]>;
   public input: string;
 
   constructor(private service: JsonService) {}

@@ -1,0 +1,12 @@
+.card {
+  width: fit-content;
+  cursor: pointer;
+  padding: .5em;
+  text-align: center;
+  margin: 8px;
+  box-shadow: 0 0 6px #ccc;
+}
+
+.card:hover {
+  box-shadow: 0 0 18px #999;
+}

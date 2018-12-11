@@ -21,6 +21,7 @@ import { PhotoComponent } from './components/photo/photo.component';
 import { PostComponent } from './components/post/post.component';
 import { HeigthEqualsWidthComponent } from './components/heigth-equals-width/heigth-equals-width.component';
 import { AudioComponent } from './components/audio/audio.component';
+import { PhotoMiniatureComponent } from './components/photos/photo-miniature/photo-miniature.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -52,6 +53,7 @@ const routes: Routes = [
     PostComponent,
     HeigthEqualsWidthComponent,
     AudioComponent,
+    PhotoMiniatureComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,12 +7,7 @@
     <h4>Photos</h4>
     <ul>
       <li *ngFor="let photo of album.photos | slice:1:10">
-        <a [routerLink]="['/photos', photo.id]">
-          <div class="card">
-            <h4 class="card__title">{{ photo.title | slice:1:12}}</h4>
-            <img class="card__image" [src]="photo.thumbnailUrl" alt="thumbnail">
-         </div>
-        </a>
+        <app-photo-miniature [photo]="photo"></app-photo-miniature>
       </li>
     </ul>
   </li>
