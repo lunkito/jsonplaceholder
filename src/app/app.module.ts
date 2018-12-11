@@ -22,6 +22,7 @@ import { PostComponent } from './components/post/post.component';
 import { HeigthEqualsWidthComponent } from './components/heigth-equals-width/heigth-equals-width.component';
 import { AudioComponent } from './components/audio/audio.component';
 import { PhotoMiniatureComponent } from './components/photos/photo-miniature/photo-miniature.component';
+import { AlbumComponent } from './components/album/album.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'posts/:id', component: PostComponent },
   { path: 'comments', component: CommentsComponent },
   { path: 'albums', component: AlbumsComponent },
+  { path: 'albums/:id', component: AlbumComponent },
   { path: 'photos', component: PhotosComponent },
   { path: 'photos/:id', component: PhotoComponent },
   { path: 'todos', component: TodosComponent },
@@ -54,6 +56,7 @@ const routes: Routes = [
     HeigthEqualsWidthComponent,
     AudioComponent,
     PhotoMiniatureComponent,
+    AlbumComponent,
   ],
   imports: [
     BrowserModule,

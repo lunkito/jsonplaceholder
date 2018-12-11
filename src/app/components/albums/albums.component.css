@@ -10,3 +10,7 @@ li {
   box-sizing: border-box;
   flex-grow: 1;
 }
+
+span {
+  font-weight: lighter;
+}

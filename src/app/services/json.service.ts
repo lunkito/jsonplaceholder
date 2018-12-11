@@ -4,7 +4,7 @@ import { Photo } from '../models/photo';
 import { Post } from '../models/post';
 import { Comment } from '../models/comment';
 import { Todo } from '../models/todo';
-import { Album } from '../models/albums';
+import { Album } from '../models/album';
 
 @Injectable({
   providedIn: 'root'

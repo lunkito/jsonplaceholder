@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonService } from 'src/app/services/json.service';
 import { Observable, zip } from 'rxjs';
-import { Album } from 'src/app/models/albums';
+import { Album } from 'src/app/models/album';
 import { Photo } from 'src/app/models/photo';
 import { map } from 'rxjs/operators';
 
