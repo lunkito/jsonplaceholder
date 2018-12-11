@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { JsonService } from 'src/app/services/json.service';
+import { Observable, zip } from 'rxjs';
+import { Album } from 'src/app/models/albums';
+import { Photo } from 'src/app/models/photo';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-albums',
@@ -6,7 +11,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./albums.component.css']
 })
 export class AlbumsComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit() {}
+  public albums$: Observable<Album[]>;
+  public photos$: Observable<Photo[]>;
+
+  constructor(private json: JsonService) {}
+
+  ngOnInit() {
+    this.albums$ = this
+      .zipAlbumsAndPhotos()
+      .pipe(
+        map(([albums, photos]) => {
+          return this.addPhotosToAlbums(albums, photos);
+        })
+      );
+  }
+
+  private addPhotosToAlbums(albums: Album[], photos: Photo[]): Album[] {
+    return albums.map(album => {
+      return { ...album, photos: photos.filter(photo => photo.albumId === album.id) };
+    });
+  }
+
+  private zipAlbumsAndPhotos() {
+    return zip(this.json.getAlbums(), this.json.getPhotosObservable());
+  }
 }

@@ -4,51 +4,60 @@ import { Photo } from '../models/photo';
 import { Post } from '../models/post';
 import { Comment } from '../models/comment';
 import { Todo } from '../models/todo';
+import { Album } from '../models/albums';
 
 @Injectable({
   providedIn: 'root'
 })
   export class JsonService {
+
+  private URL = 'https://jsonplaceholder.typicode.com';
+  
   constructor(private http: HttpClient) {}
 
+  getAlbums() {
+    return this.http
+      .get<Album[]>(`${this.URL}/albums`);
+  }
+
   getUsers() {
-    return fetch('https://jsonplaceholder.typicode.com/users');
+    return fetch(`${this.URL}/users`);
   }
 
   getUserBy(id: number) {
-    return fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+    return fetch(`${this.URL}/users/${id}`);
   }
 
   getPhotos() {
-    return fetch('https://jsonplaceholder.typicode.com/photos');
+    return fetch(`${this.URL}/photos`);
   }
 
   getPhotosObservable() {
     return this.http
-      .get<Photo[]>('https://jsonplaceholder.typicode.com/photos');
+      .get<Photo[]>(`${this.URL}/photos`);
   }
 
   getPhotoBy(id: number) {
-    return this.http.get<Photo>(`https://jsonplaceholder.typicode.com/photos/${id}`);
+    return this.http.get<Photo>(`${this.URL}/photos/${id}`);
   }
 
   getPosts() {
-    return this.http.get<Post[]>('https://jsonplaceholder.typicode.com/posts');
+    return this.http.get<Post[]>(`${this.URL}/posts`);
   }
 
   getPostBy(id: number) {
-    return this.http.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    return this.http.get<Post>(`${this.URL}/posts/${id}`);
   }
 
   getComments() {
-    return this.http.get<Comment[]>(`https://jsonplaceholder.typicode.com/comments`);
+    return this.http.get<Comment[]>(`${this.URL}/comments`);
   }
 
   getCommentsByPost(id: number) {
-    return this.http.get<Comment[]>(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
+    return this.http.get<Comment[]>(`${this.URL}/posts/${id}/comments`);
   }
 
   getTodos() {
-    return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos');
+    return this.http.get<Todo[]>(`${this.URL}/todos`);
   }
 }

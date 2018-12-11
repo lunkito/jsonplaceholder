@@ -1,1 +1,25 @@
 <h2>Albums component</h2>
+
+<ul *ngIf="albums$ | async; let albums; else loading;">
+  <li *ngFor="let album of albums | slice:1:10">
+    <h3>Comment</h3>
+    {{ album.title }}
+    <h4>Photos</h4>
+    <ul>
+      <li *ngFor="let photo of album.photos | slice:1:10">
+        <a [routerLink]="['/photos', photo.id]">
+          <div class="card">
+            <h4 class="card__title">{{ photo.title | slice:1:12}}</h4>
+            <img class="card__image" [src]="photo.thumbnailUrl" alt="thumbnail">
+         </div>
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<ng-template #loading>
+  <div style="font-size: 42px">
+    LOADING
+  </div>
+</ng-template>
