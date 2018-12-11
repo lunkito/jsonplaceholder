@@ -21,13 +21,6 @@ export class PhotosComponent implements OnInit {
       .getPhotos()
       .then(response => response.json())
       .then((photos: Photo[]) => {
-        photos = photos.map(photo => {
-          photo.title = photo.title
-            .split(' ', 2)
-            .join(' ');
-          return photo;
-        });
-        
         this.photos = photos;
         this.selected = photos;
       });

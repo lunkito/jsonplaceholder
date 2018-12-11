@@ -14,6 +14,8 @@ export class PhotoMiniatureComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.photo.title = this.photo.title
+      .split(' ', 2)
+      .join(' ');
   }
-
 }
