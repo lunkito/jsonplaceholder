@@ -1,0 +1,7 @@
+<h3>Album: <a [routerLink]="['/albums', album.id]">{{ album.title }}</a></h3>
+<strong>Photos</strong>
+<ul>
+  <li *ngFor="let photo of album.photos | slice:1:10">
+    <app-photo-miniature [photo]="photo"></app-photo-miniature>
+  </li>
+</ul>

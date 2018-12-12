@@ -2,13 +2,7 @@
 
 <ul *ngIf="albums$ | async; let albums; else loading;">
   <li *ngFor="let album of albums | slice:1:10">
-    <h3>Album: <a [routerLink]="['/albums', album.id]">{{ album.title }}</a></h3>
-    <strong>Photos</strong>
-    <ul>
-      <li *ngFor="let photo of album.photos | slice:1:10">
-        <app-photo-miniature [photo]="photo"></app-photo-miniature>
-      </li>
-    </ul>
+    <app-album-miniature [album]="album"></app-album-miniature>
   </li>
 </ul>
 
