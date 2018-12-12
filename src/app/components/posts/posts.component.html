@@ -2,10 +2,6 @@
 
 <ul>
   <li *ngFor="let post of posts$ | async">
-    <div class="post">
-      <h3 [routerLink]="['/posts', post.id]" class="post__title">{{ post.title }}</h3>
-      <div [routerLink]="['/posts', post.id]" class="post__body">{{ post.body }}</div>
-      <a [routerLink]="['/users', post.userId]" class="post__user">User ID: {{ post.userId }}</a>
-    </div>
+    <app-post-miniature [post]="post"></app-post-miniature>
   </li>
 </ul>

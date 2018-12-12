@@ -24,6 +24,7 @@ import { AudioComponent } from './components/audio/audio.component';
 import { PhotoMiniatureComponent } from './components/photos/photo-miniature/photo-miniature.component';
 import { AlbumComponent } from './components/album/album.component';
 import { AlbumMiniatureComponent } from './components/albums/album-miniature/album-miniature.component';
+import { PostMiniatureComponent } from './components/posts/post-miniature/post-miniature.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -59,6 +60,7 @@ const routes: Routes = [
     PhotoMiniatureComponent,
     AlbumComponent,
     AlbumMiniatureComponent,
+    PostMiniatureComponent,
   ],
   imports: [
     BrowserModule,
