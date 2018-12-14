@@ -5,6 +5,7 @@ import { Post } from '../models/post';
 import { Comment } from '../models/comment';
 import { Todo } from '../models/todo';
 import { Album } from '../models/album';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,13 @@ import { Album } from '../models/album';
 
   getUserBy(id: number) {
     return fetch(`${this.URL}/users/${id}`);
+  }
+
+  getUserInstanceBy(id: number) {
+    fetch(`${this.URL}/users/${id}`)
+      .then<User>(userResponse => {
+        return userResponse.json();
+    });
   }
 
   getPhotos() {

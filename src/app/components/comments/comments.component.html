@@ -3,7 +3,8 @@
 <ul class="posts">
   <li class="post" *ngFor="let post of posts$ | async">
     <h3 class="post__title" [routerLink]="['/posts', post.id]">
-      Post {{ post.id }}.  {{ post.title | titlecase }}
+      Post {{ post.id }}.  {{ post.title | titlecase }} 
+      <!-- <span>by {{ service.getUserInstanceBy(post.userId)}}</span> -->
     </h3>
     <div class="post__body">{{ post.body }}</div>
     <ul class="comments">

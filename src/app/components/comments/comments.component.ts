@@ -14,9 +14,13 @@ export class CommentsComponent implements OnInit {
 
   public posts$: Observable<Post[]>;
 
-  constructor(private service: JsonService) {}
+  constructor(public service: JsonService) {}
 
   ngOnInit() {
+    this.service.getUserBy(1)
+      .then(response => JSON.stringify(response))
+      .then(userString => console.log(userString));
+    
     this.posts$ = this
       .zipPostsAndComments()
       .pipe(
