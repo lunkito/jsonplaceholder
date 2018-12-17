@@ -17,7 +17,7 @@ export class CommentsComponent implements OnInit {
   constructor(public service: JsonService) {}
 
   ngOnInit() {
-    this.service.getUserBy(1)
+    this.service.getUserById(1)
       .then(response => JSON.stringify(response))
       .then(userString => console.log(userString));
     

@@ -25,7 +25,7 @@ export class PostComponent implements OnInit {
 
   private getPost() {
     const id = this.route.snapshot.params['id'];
-    this.post$ = this.service.getPostBy(id);
+    this.post$ = this.service.getPostById(id);
   }
   
   private getPostComments() {

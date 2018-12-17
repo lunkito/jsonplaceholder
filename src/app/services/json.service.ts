@@ -25,7 +25,7 @@ import { User } from '../models/user';
     return fetch(`${this.URL}/users`);
   }
 
-  getUserBy(id: number) {
+  getUserById(id: number) {
     return fetch(`${this.URL}/users/${id}`);
   }
 
@@ -53,7 +53,7 @@ import { User } from '../models/user';
     return this.http.get<Post[]>(`${this.URL}/posts`);
   }
 
-  getPostBy(id: number) {
+  getPostById(id: number) {
     return this.http.get<Post>(`${this.URL}/posts/${id}`);
   }
 
@@ -67,5 +67,9 @@ import { User } from '../models/user';
 
   getTodos() {
     return this.http.get<Todo[]>(`${this.URL}/todos`);
+  }
+
+  deleteTodoById(id: number) {
+    return this.http.delete(`${this.URL}/todos/${id}`);
   }
 }
