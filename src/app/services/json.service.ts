@@ -25,15 +25,17 @@ import { User } from '../models/user';
     return fetch(`${this.URL}/users`);
   }
 
+  getUsers$() {
+    return this.http.get<User[]>(`${this.URL}/users`);
+  }
+
   getUserById(id: number) {
-    return fetch(`${this.URL}/users/${id}`);
+    return this.http.get<User>(`${this.URL}/users/${id}`);
   }
 
   getUserInstanceBy(id: number) {
     fetch(`${this.URL}/users/${id}`)
-      .then<User>(userResponse => {
-        return userResponse.json();
-    });
+      .then<User>(userResponse => userResponse.json());
   }
 
   getPhotos() {
@@ -41,8 +43,7 @@ import { User } from '../models/user';
   }
 
   getPhotosObservable() {
-    return this.http
-      .get<Photo[]>(`${this.URL}/photos`);
+    return this.http.get<Photo[]>(`${this.URL}/photos`);
   }
 
   getPhotoBy(id: number) {

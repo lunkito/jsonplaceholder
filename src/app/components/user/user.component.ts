@@ -12,16 +12,13 @@ import { Observable } from 'rxjs';
 })
 export class UserComponent implements OnInit {
 
-  public user$: Promise<User>;
+  public user$: Observable<User>;
 
   constructor(private service: JsonService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
     this.user$ = this.service
-      .getUserById(id)
-      .then<User>(response => {
-        return response.json();
-      });
+      .getUserById(id);
   }
 }

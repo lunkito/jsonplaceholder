@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
+import { throwError } from 'rxjs';
 import { Todo } from 'src/app/models/todo';
 import { JsonService } from 'src/app/services/json.service';
 import { catchError, finalize } from 'rxjs/operators';
