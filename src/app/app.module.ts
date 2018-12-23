@@ -25,6 +25,7 @@ import { PhotoMiniatureComponent } from './components/photos/photo-miniature/pho
 import { AlbumComponent } from './components/album/album.component';
 import { AlbumMiniatureComponent } from './components/albums/album-miniature/album-miniature.component';
 import { PostMiniatureComponent } from './components/posts/post-miniature/post-miniature.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -60,7 +61,7 @@ const routes: Routes = [
     PhotoMiniatureComponent,
     AlbumComponent,
     AlbumMiniatureComponent,
-    PostMiniatureComponent,
+    PostMiniatureComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +69,8 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    LayoutModule
   ],
   providers: [JsonService],
   bootstrap: [AppComponent]
