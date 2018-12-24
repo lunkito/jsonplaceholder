@@ -1,16 +1,16 @@
-<h2>Comments component</h2>
+<h2 class="mat-display-1">Comments component</h2>
 
 <ul class="posts">
   <li class="post" *ngFor="let post of posts$ | async">
-    <h3 class="post__title" [routerLink]="['/posts', post.id]">
+    <h2 class="post__title mat-h2" [routerLink]="['/posts', post.id]">
       Post {{ post.id }}.  {{ post.title | titlecase }} 
-    </h3>
+    </h2>
 
     <div class="post__body">{{ post.body }}</div>
     <ul class="comments">
-      <li class="separator">Comments</li>
+      <li class="mat-h2">Comments</li>
       <li class="comment" *ngFor="let comment of post.comments; index as i">
-        <div class="comment__title">
+        <div class="mat-h3 comment__title">
           {{ i + 1 }} {{ comment.name }} by
           <span *ngFor="let user of post.users">
             {{ user.name }}

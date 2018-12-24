@@ -18,7 +18,7 @@ export class CommentsComponent implements OnInit {
   constructor(public service: JsonService) {}
 
   ngOnInit() {
-    this.posts$ = this.getPosts$();
+    this.posts$ = this.getPosts$();  
   }
 
   private getPosts$(): Observable<Post[]> {
