@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonService } from 'src/app/services/json.service';
-import { Observable, zip } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
 import { Comment } from 'src/app/models/comment';
 import { Post } from 'src/app/models/post';
 import { User } from 'src/app/models/user';
+import { zip, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-comments',
@@ -13,19 +13,33 @@ import { User } from 'src/app/models/user';
 })
 export class CommentsComponent implements OnInit {
 
-  public users$: Observable<User[]>;
-  public comments$: Observable<Comment[]>;
   public posts$: Observable<Post[]>;
-
-  public users: User[];
-  public posts: Post[];
-  public comments: Comment[];
 
   constructor(public service: JsonService) {}
 
   ngOnInit() {
-    this.service.getPosts().subscribe(posts => this.posts = posts);
-    this.service.getUsers$().subscribe(users => this.users = users);
-    this.service.getComments().subscribe(comments => this.comments = comments);
+    this.posts$ = this.getPosts$();
+  }
+
+  private getPosts$(): Observable<Post[]> {
+    return this
+      .zipPostCommentsUsers()
+      .pipe(map(([posts, comments, users]) => {
+        return this.addCommentsAndUsersToPosts(posts, comments, users);
+      }));
+  }
+
+  private zipPostCommentsUsers() {
+    return zip(this.service.getPosts(), this.service.getComments(), this.service.getUsers$());
+  }
+
+  private addCommentsAndUsersToPosts(posts: Post[], comments: Comment[], users: User[]): Post[] {
+    return posts.map(post => {
+      return post = {
+        ...post,
+        comments: comments.filter(comment => comment.postId === post.id),
+        users: users.filter(user => user.id === post.userId)
+      };
+    });
   }
 }
