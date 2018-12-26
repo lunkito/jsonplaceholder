@@ -6,6 +6,7 @@
   <a class="post__user" [routerLink]="['/users', post.userId]">User ID: {{ (post$ | async)?.userId }}</a>
 </div>
 
+<h2 class="mat-h2">Comments</h2>
 <div class="comments" *ngIf="comments$ | async; let comments; else loading">
 <ul>
   <li *ngFor="let comment of comments">
