@@ -1,6 +1,9 @@
-<h2>Users component</h2>
+<h1 class="mat-display-1">Users component</h1>
 
-<input type="text" [(ngModel)]="nameOrUsername" (ngModelChange)="filterByNameOrUsername()">
+<mat-form-field>
+  <input matInput placeholder="Name" [(ngModel)]="nameOrUsername" (ngModelChange)="filterByNameOrUsername()">
+</mat-form-field>
+
 <table class="table mat-elevation-z2">
   <thead>
     <th class="th">Name</th>

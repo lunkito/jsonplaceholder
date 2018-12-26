@@ -1,8 +1,14 @@
-.table { border-collapse: collapse; font-weight: lighter; }
+.table {
+   border-collapse: collapse; 
+   font-weight: lighter;
+   margin-bottom: 32px;
+}
+
 .th { text-align: left; font-weight: bolder; }
-.td, .th { padding: .5em; }
-.even { background: #ccc; }
-.odd { background: #eee; }
+.td, .th { padding: 1.2em; }
+
+.even { background: #d8d8d8; }
+.odd { background: #fff; }
 
 .tr:hover {
    cursor: pointer;

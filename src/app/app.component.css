@@ -14,3 +14,10 @@ a {
   padding: 1em;
   display: block;
 }
+
+.app-container {
+  max-width: 1260px;
+  margin: auto;
+  margin-top: 32px;
+  padding: 0 16px;
+}
