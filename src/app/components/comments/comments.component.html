@@ -10,12 +10,12 @@
     <ul class="comments">
       <li class="mat-h2">Comments</li>
       <li class="comment" *ngFor="let comment of post.comments; index as i">
-        <div class="mat-h3 comment__title">
+        <h3 class="mat-h3 comment__title">
           {{ i + 1 }} {{ comment.name }} by
           <span *ngFor="let user of post.users">
             {{ user.name }}
           </span>
-        </div>
+        </h3>
         <div class="comment__body">{{ comment.body }}</div>
       </li>
     </ul>
