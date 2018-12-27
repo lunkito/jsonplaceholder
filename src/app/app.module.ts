@@ -5,8 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
+import { LayoutModule } from '@angular/cdk/layout';
 
 import { JsonService } from './services/json.service';
+
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 import { AppComponent } from './app.component';
 import { CommentsComponent } from './components/comments/comments.component';
@@ -25,7 +28,6 @@ import { PhotoMiniatureComponent } from './components/photos/photo-miniature/pho
 import { AlbumComponent } from './components/album/album.component';
 import { AlbumMiniatureComponent } from './components/albums/album-miniature/album-miniature.component';
 import { PostMiniatureComponent } from './components/posts/post-miniature/post-miniature.component';
-import { LayoutModule } from '@angular/cdk/layout';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -61,7 +63,8 @@ const routes: Routes = [
     PhotoMiniatureComponent,
     AlbumComponent,
     AlbumMiniatureComponent,
-    PostMiniatureComponent
+    PostMiniatureComponent,
+    CapitalizePipe
   ],
   imports: [
     BrowserModule,

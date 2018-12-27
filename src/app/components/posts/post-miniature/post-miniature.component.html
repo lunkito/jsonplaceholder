@@ -4,6 +4,6 @@
     class="post__title mat-h2">
       Post {{ post.id }}.  {{ post.title | titlecase }}
   </h2>
-  <div [routerLink]="['/posts', post.id]" class="post__body">{{ post.body }}</div>
+  <div [routerLink]="['/posts', post.id]" class="post__body">{{ post.body | capitalize}}</div>
   <a [routerLink]="['/users', post.userId]" class="post__user">User ID: {{ post.userId }}</a>
 </div>
