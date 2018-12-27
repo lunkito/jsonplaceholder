@@ -50,7 +50,7 @@ export class TodosComponent implements OnInit {
     const dialogRef = this.dialog.open(DeletAllDialogComponent);
     dialogRef.afterClosed().subscribe(accepts => {
       if (accepts) {
-        this.deleteAll()
+        this.deleteAll();
       }
     });
   }
