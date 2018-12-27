@@ -15,7 +15,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -34,7 +34,8 @@ import { MatSidenavModule } from '@angular/material';
     MatInputModule,
     MatMenuModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule
   ],
   exports: [
     MatTabsModule, 
@@ -51,7 +52,8 @@ import { MatSidenavModule } from '@angular/material';
     MatInputModule,
     MatMenuModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule
   ],
   declarations: []
 })

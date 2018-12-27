@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { throwError } from 'rxjs';
 import { Todo } from 'src/app/models/todo';
 import { JsonService } from 'src/app/services/json.service';
 import { catchError, finalize } from 'rxjs/operators';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-todos',
@@ -13,7 +14,7 @@ export class TodosComponent implements OnInit {
 
   public todos: Todo[];
 
-  constructor(private service: JsonService) {}
+  constructor(private service: JsonService, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.getTodos();
@@ -45,7 +46,36 @@ export class TodosComponent implements OnInit {
       .subscribe();
   }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(DeletAllDialogComponent);
+    dialogRef.afterClosed().subscribe(accepts => {
+      if (accepts) {
+        this.deleteAll()
+      }
+    });
+  }
+
   deleteAll() {
     this.todos = [];
+  }
+}
+
+@Component({
+  selector: `app-delete-all-dialog`,
+  template: `
+    <mat-dialog-content>Are you sure?</mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>No</button>
+      <button mat-button [mat-dialog-close]="true">Yes</button>
+    </mat-dialog-actions>
+  `,
+  styles: []
+})
+export class DeletAllDialogComponent {
+  constructor(
+    public dialogRef: MatDialogRef<DeletAllDialogComponent>) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

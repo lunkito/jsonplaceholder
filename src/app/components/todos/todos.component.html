@@ -1,14 +1,16 @@
-<h2>Todos component</h2>
+<h1 class="mat-display-1">Todos component</h1>
 
-<mat-form-field>
-  <input matInput placeholder="Todo" (keyup.enter)="addTodo(inputTodo)" #inputTodo>
-</mat-form-field>
-<button mat-stroked-button color="primary" (click)="addTodo(inputTodo)">Add</button>
-<button mat-stroked-button color="warn" (click)="deleteAll()">Delete All</button>
+<div>
+  <mat-form-field style="width: 414px">
+    <input matInput placeholder="Todo" (keyup.enter)="addTodo(inputTodo)" #inputTodo>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="addTodo(inputTodo)">Add</button>
+  <button mat-raised-button color="warn" (click)="openDialog()">Delete All</button>
+</div>
 
 <mat-list>
   <mat-list-item class="todo" *ngFor="let todo of todos">
-    <mat-checkbox [(ngModel)]="todo.completed">{{ todo.title }}</mat-checkbox>
-    <button mat-stroked-button color="warn" (click)="delete(todo)">Delete</button>
+    <mat-checkbox style="width: 100%" [(ngModel)]="todo.completed">{{ todo.title }}</mat-checkbox>
+    <button mat-raised-button color="warn" (click)="delete(todo)">Delete</button>
   </mat-list-item>
 </mat-list>

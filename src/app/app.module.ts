@@ -28,6 +28,7 @@ import { PhotoMiniatureComponent } from './components/photos/photo-miniature/pho
 import { AlbumComponent } from './components/album/album.component';
 import { AlbumMiniatureComponent } from './components/albums/album-miniature/album-miniature.component';
 import { PostMiniatureComponent } from './components/posts/post-miniature/post-miniature.component';
+import { DeletAllDialogComponent } from './components/todos/todos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -64,7 +65,8 @@ const routes: Routes = [
     AlbumComponent,
     AlbumMiniatureComponent,
     PostMiniatureComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    DeletAllDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +77,7 @@ const routes: Routes = [
     MaterialModule,
     LayoutModule
   ],
+  entryComponents: [DeletAllDialogComponent],
   providers: [JsonService],
   bootstrap: [AppComponent]
 })
