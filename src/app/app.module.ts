@@ -12,23 +12,22 @@ import { JsonService } from './services/json.service';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 import { AppComponent } from './app.component';
-import { CommentsComponent } from './components/comments/comments.component';
-import { HomeComponent } from './components/home/home.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { PhotosComponent } from './components/photos/photos.component';
-import { TodosComponent } from './components/todos/todos.component';
 import { UsersComponent } from './components/users/users.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { UserComponent } from './components/user/user.component';
 import { PhotoComponent } from './components/photo/photo.component';
 import { PostComponent } from './components/post/post.component';
-import { HeigthEqualsWidthComponent } from './components/heigth-equals-width/heigth-equals-width.component';
-import { AudioComponent } from './components/audio/audio.component';
 import { PhotoMiniatureComponent } from './components/photos/photo-miniature/photo-miniature.component';
 import { AlbumComponent } from './components/album/album.component';
 import { AlbumMiniatureComponent } from './components/albums/album-miniature/album-miniature.component';
 import { PostMiniatureComponent } from './components/posts/post-miniature/post-miniature.component';
-import { DeletAllDialogComponent } from './components/todos/todos.component';
+import { HomeComponent } from './components/layouts/home/home.component';
+import { CommentsComponent } from './components/layouts/comments/comments.component';
+import { TodosComponent, DeletAllDialogComponent } from './components/layouts/todos/todos.component';
+import { HeigthEqualsWidthComponent } from './components/layouts/heigth-equals-width/heigth-equals-width.component';
+import { AudioComponent } from './components/layouts/audio/audio.component';
 
 @NgModule({
   declarations: [
