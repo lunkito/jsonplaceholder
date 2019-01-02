@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { LayoutModule } from '@angular/cdk/layout';
+import { RoutingModule } from './modules/routing/routing.module';
 
 import { JsonService } from './services/json.service';
 
@@ -29,22 +29,6 @@ import { AlbumComponent } from './components/album/album.component';
 import { AlbumMiniatureComponent } from './components/albums/album-miniature/album-miniature.component';
 import { PostMiniatureComponent } from './components/posts/post-miniature/post-miniature.component';
 import { DeletAllDialogComponent } from './components/todos/todos.component';
-
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'posts', component: PostsComponent },
-  { path: 'posts/:id', component: PostComponent },
-  { path: 'comments', component: CommentsComponent },
-  { path: 'albums', component: AlbumsComponent },
-  { path: 'albums/:id', component: AlbumComponent },
-  { path: 'photos', component: PhotosComponent },
-  { path: 'photos/:id', component: PhotoComponent },
-  { path: 'todos', component: TodosComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'users/:id', component: UserComponent },
-  { path: 'height', component: HeigthEqualsWidthComponent },
-  { path: 'audio', component: AudioComponent },
-];
 
 @NgModule({
   declarations: [
@@ -70,7 +54,7 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    RoutingModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
