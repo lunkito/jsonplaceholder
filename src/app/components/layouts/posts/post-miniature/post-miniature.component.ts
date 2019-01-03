@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from 'src/app/models/post';
-import { CapitalizePipe } from '../../../pipes/capitalize.pipe';
+import {  } from 'src/app/pipes/capitalize.pipe';
+
 @Component({
   selector: 'app-post-miniature',
   templateUrl: './post-miniature.component.html',

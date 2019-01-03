@@ -30,9 +30,7 @@ export class PostComponent implements OnInit {
   
   private getPostComments() {
     this.comments$ = this.post$.pipe(
-      mergeMap(post => { 
-        console.log(post.id);
-        return this.service.getCommentsByPost(post.id); })
+      mergeMap(post =>  this.service.getCommentsByPost(post.id))
     );
   }
 }
