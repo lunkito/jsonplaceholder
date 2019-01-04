@@ -51,7 +51,7 @@ import { TableComponent } from './components/organisms/table/table.component';
     PostMiniatureComponent,
     CapitalizePipe,
     DeletAllDialogComponent,
-    TableComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
