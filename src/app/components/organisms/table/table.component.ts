@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnChanges {
+export class TableComponent {
 
   @Input()
   private data: object[];
@@ -13,9 +13,11 @@ export class TableComponent implements OnChanges {
   public keys: string[] = [];
   public rows: object[] = [];
 
-  ngOnChanges() {
+  // En vez de usar ngOnChanges, esta magia detecta los cambios en el input
+  public dataToRender() {
     this.resetProps();
     this.convertDataToProps();
+    return this.keys;
   }
 
   private convertDataToProps() {
