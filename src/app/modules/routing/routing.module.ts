@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { UserComponent } from 'src/app/components/user/user.component';
 import { PostComponent } from 'src/app/components/post/post.component';
-import { AlbumsComponent } from 'src/app/components/albums/albums.component';
 import { AlbumComponent } from 'src/app/components/album/album.component';
 import { PhotoComponent } from 'src/app/components/photo/photo.component';
 import { HomeComponent } from 'src/app/components/layouts/home/home.component';
@@ -14,6 +13,7 @@ import { AudioComponent } from 'src/app/components/layouts/audio/audio.component
 import { PostsComponent } from 'src/app/components/layouts/posts/posts.component';
 import { PhotosComponent } from 'src/app/components/layouts/photos/photos.component';
 import { UsersComponent } from 'src/app/components/layouts/users/users.component';
+import { AlbumsComponent } from 'src/app/components/layouts/albums/albums.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
