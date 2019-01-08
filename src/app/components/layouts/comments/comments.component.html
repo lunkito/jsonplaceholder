@@ -2,22 +2,8 @@
 
 <ul class="posts">
   <li class="post" *ngFor="let post of posts$ | async">
-    <h2 class="post__title mat-h2" [routerLink]="['/posts', post.id]">
-      Post {{ post.id }}.  {{ post.title | titlecase }} 
-    </h2>
-
+    <h2 class="post__title mat-h2" [routerLink]="['/posts', post.id]">Post {{ post.id }}.  {{ post.title | titlecase }}</h2>
     <div class="post__body">{{ post.body }}</div>
-    <ul class="comments">
-      <li class="mat-h2">Comments</li>
-      <li class="comment" *ngFor="let comment of post.comments; index as i">
-        <h3 class="mat-h3 comment__title">
-          {{ i + 1 }} {{ comment.name }} by
-          <span *ngFor="let user of post.users">
-            {{ user.name }}
-          </span>
-        </h3>
-        <div class="comment__body">{{ comment.body }}</div>
-      </li>
-    </ul>
+    <app-post-comments [post]="post"></app-post-comments>
   </li>
 </ul>

@@ -29,6 +29,7 @@ import { AlbumMiniatureComponent } from './components/layouts/albums/album-minia
 import { TableComponent } from './components/organisms/table/table.component';
 import { PostMiniatureComponent } from './components/organisms/post-miniature/post-miniature.component';
 import { PostComponent } from './components/layouts/post/post.component';
+import { PostCommentsComponent } from './components/organisms/post-comments/post-comments.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { PostComponent } from './components/layouts/post/post.component';
     PostMiniatureComponent,
     CapitalizePipe,
     DeletAllDialogComponent,
-    TableComponent
+    TableComponent,
+    PostCommentsComponent
   ],
   imports: [
     BrowserModule,
