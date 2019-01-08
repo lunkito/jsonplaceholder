@@ -6,16 +6,20 @@ import { Component, Input, OnChanges } from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnChanges {
-
+  
   @Input()
   private data: object[];
   
-  public keys: string[] = [];
-  public rows: object[] = [];
+  public keys: string[];
+  public rows: object[];
 
+  // Al inicio se llama antes de iniciar this.data (undefined)
+  // ¿Tiene que ver con que es un input y solo se chequean despues de construir el view tree o algo asi?
   ngOnChanges() {
-    this.resetProps();
-    this.convertDataToProps();
+    if (this.data) {
+      this.resetProps();
+      this.convertDataToProps();
+    }
   }
 
   private convertDataToProps() {
