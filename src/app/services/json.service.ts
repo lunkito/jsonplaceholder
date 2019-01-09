@@ -17,8 +17,11 @@ import { User } from '../models/user';
   constructor(private http: HttpClient) {}
 
   getAlbums() {
-    return this.http
-      .get<Album[]>(`${this.URL}/albums`);
+    return this.http.get<Album[]>(`${this.URL}/albums`);
+  }
+
+  getAlbumById(id: number) {
+    return this.http.get<Album>(`${this.URL}/albums/${id}`);
   }
 
   getUsers() {

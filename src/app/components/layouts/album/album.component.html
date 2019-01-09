@@ -1,3 +1,9 @@
-<p>
-  album works!
-</p>
+<ng-container *ngIf="album$ | async; let album; else loading">
+  <p>{{ album.title }}</p>
+  
+  <ul>
+    <li></li>
+  </ul>
+</ng-container>
+
+<ng-template #loading> Loading </ng-template>
