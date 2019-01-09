@@ -12,9 +12,7 @@ import { JsonService } from './services/json.service';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 import { AppComponent } from './app.component';
-import { UserComponent } from './components/user/user.component';
-import { PhotoComponent } from './components/photo/photo.component';
-import { AlbumComponent } from './components/album/album.component';
+
 import { HomeComponent } from './components/layouts/home/home.component';
 import { CommentsComponent } from './components/layouts/comments/comments.component';
 import { TodosComponent, DeletAllDialogComponent } from './components/layouts/todos/todos.component';
@@ -26,10 +24,14 @@ import { PhotoMiniatureComponent } from './components/layouts/photos/photo-minia
 import { UsersComponent } from './components/layouts/users/users.component';
 import { AlbumsComponent } from './components/layouts/albums/albums.component';
 import { AlbumMiniatureComponent } from './components/layouts/albums/album-miniature/album-miniature.component';
+import { PostComponent } from './components/layouts/post/post.component';
+import { AlbumComponent } from './components/layouts/album/album.component';
+
 import { TableComponent } from './components/organisms/table/table.component';
 import { PostMiniatureComponent } from './components/organisms/post-miniature/post-miniature.component';
-import { PostComponent } from './components/layouts/post/post.component';
 import { PostCommentsComponent } from './components/organisms/post-comments/post-comments.component';
+import { PhotoComponent } from './components/layouts/photo/photo.component';
+import { UserComponent } from './components/layouts/user/user.component';
 
 @NgModule({
   declarations: [
