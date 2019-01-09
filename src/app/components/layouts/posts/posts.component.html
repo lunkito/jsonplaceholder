@@ -1,6 +1,6 @@
 <h2 class="mat-display-1">Posts component</h2>
 
-<ul >
+<ul>
   <li *ngFor="let post of posts$ | async">
     <app-post-miniature [post]="post"></app-post-miniature>
   </li>

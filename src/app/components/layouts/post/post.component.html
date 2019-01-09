@@ -1,9 +1,9 @@
-<h2>Post component</h2>
+<h2 class="mat-display-1">Post component</h2>
 
 <div class="post" *ngIf="post$ | async; let post; else loading">
-  <h4 class="post__title">{{ post.title }}</h4>
-  <div class="post__body">{{ post.body }}</div>
-  <a class="post__user" [routerLink]="['/users', post.userId]">User ID: {{ (post$ | async)?.userId }}</a>
+  <h2 class="mat-h2">{{ post.title | capitalize }}</h2>
+  <div>{{ post.body | capitalize }}</div>
+  <a [routerLink]="['/users', post.userId]">User ID: {{ post.userId }}</a>
 </div>
 
 <h2 class="mat-h2">Comments</h2>

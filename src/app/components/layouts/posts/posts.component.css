@@ -7,12 +7,3 @@ ul {
 li {
   margin-bottom: 48px;
 }
-
-.post__title {
-  margin-bottom: 12px
-}
-
-.post__title,
-.post__body {
-  cursor: pointer;
-}
