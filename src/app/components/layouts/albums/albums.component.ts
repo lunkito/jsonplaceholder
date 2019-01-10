@@ -21,9 +21,7 @@ export class AlbumsComponent implements OnInit {
     this.albums$ = this
       .zipAlbumsAndPhotos()
       .pipe(
-        map(([albums, photos]) => {
-          return this.addPhotosToAlbums(albums, photos);
-        })
+        map(([albums, photos]) => this.addPhotosToAlbums(albums, photos))
       );
   }
 

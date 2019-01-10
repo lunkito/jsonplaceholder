@@ -8,7 +8,6 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { RoutingModule } from './modules/routing/routing.module';
 
 import { JsonService } from './services/json.service';
-
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 import { AppComponent } from './app.component';
@@ -20,7 +19,6 @@ import { HeigthEqualsWidthComponent } from './components/layouts/heigth-equals-w
 import { AudioComponent } from './components/layouts/audio/audio.component';
 import { PhotosComponent } from './components/layouts/photos/photos.component';
 import { PostsComponent } from './components/layouts/posts/posts.component';
-import { PhotoMiniatureComponent } from './components/layouts/photos/photo-miniature/photo-miniature.component';
 import { UsersComponent } from './components/layouts/users/users.component';
 import { AlbumsComponent } from './components/layouts/albums/albums.component';
 import { AlbumMiniatureComponent } from './components/layouts/albums/album-miniature/album-miniature.component';
@@ -32,6 +30,10 @@ import { PostMiniatureComponent } from './components/organisms/post-miniature/po
 import { PostCommentsComponent } from './components/organisms/post-comments/post-comments.component';
 import { PhotoComponent } from './components/layouts/photo/photo.component';
 import { UserComponent } from './components/layouts/user/user.component';
+import { AlbumPhotosComponent } from './components/organisms/album-photos/album-photos.component';
+import { PhotosListComponent } from './components/organisms/photos-list/photos-list.component';
+
+import { PhotoMiniatureComponent } from './components/molecules/photo-miniature/photo-miniature.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { UserComponent } from './components/layouts/user/user.component';
     CapitalizePipe,
     DeletAllDialogComponent,
     TableComponent,
-    PostCommentsComponent
+    PostCommentsComponent,
+    AlbumPhotosComponent,
+    PhotosListComponent
   ],
   imports: [
     BrowserModule,

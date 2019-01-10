@@ -4,8 +4,5 @@
 <span *ngIf="selected">
    Numero de fotos: {{ selected.length }}
 </span>
-<ul>
-   <li *ngFor="let photo of selected | slice:0:100">
-      <app-photo-miniature [photo]="photo"></app-photo-miniature>
-   </li>
-</ul>
+
+<app-photos-list [photos]="selected" [max]="100"></app-photos-list>

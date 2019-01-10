@@ -1,9 +1,8 @@
+<h1 class="mat-display-1">Album component</h1>
+
 <ng-container *ngIf="album$ | async; let album; else loading">
-  <p>{{ album.title }}</p>
-  
-  <ul>
-    <li></li>
-  </ul>
+  <p>{{ album.title | capitalize }}</p>
+  <app-photos-list [photos]="photos"></app-photos-list>
 </ng-container>
 
 <ng-template #loading> Loading </ng-template>
