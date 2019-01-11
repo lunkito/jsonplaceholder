@@ -1,4 +1,4 @@
-<h2>Albums component</h2>
+<h2 class="mat-display-1">Albums component</h2>
 
 <ul *ngIf="albums$ | async; let albums; else loading;">
   <li *ngFor="let album of albums | slice:1:10">
@@ -7,7 +7,7 @@
 </ul>
 
 <ng-template #loading>
-  <div style="font-size: 42px">
+  <div style="font-size: 32px">
     LOADING
   </div>
 </ng-template>
