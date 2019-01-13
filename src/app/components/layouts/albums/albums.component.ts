@@ -4,7 +4,7 @@ import { Observable, zip } from 'rxjs';
 import { Album } from 'src/app/models/album';
 import { Photo } from 'src/app/models/photo';
 import { map, tap } from 'rxjs/operators';
-import { Converter } from 'src/app/converter/album.converter';
+import { Converter } from 'src/app/converter/converter';
 
 @Component({
   selector: 'app-albums',
@@ -23,7 +23,6 @@ export class AlbumsComponent implements OnInit {
       .zipAlbumsAndPhotos()
       .pipe(
         map(([albums, photos]) => this.addPhotosToAlbums(albums, photos)),
-        tap(albums => console.log(albums))
       );
   }
 

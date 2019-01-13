@@ -5,6 +5,7 @@ import { Post } from 'src/app/models/post';
 import { User } from 'src/app/models/user';
 import { zip, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Converter } from 'src/app/converter/converter';
 
 @Component({
   selector: 'app-comments',
@@ -34,12 +35,11 @@ export class CommentsComponent implements OnInit {
   }
 
   private addCommentsAndUsersToPosts(posts: Post[], comments: Comment[], users: User[]): Post[] {
-    return posts.map(post => {
-      return post = {
-        ...post,
-        comments: comments.filter(comment => comment.postId === post.id),
-        users: users.filter(user => user.id === post.userId)
-      };
+    return posts.map(postResponse => {
+      const post = Converter.postResponseToPost(postResponse);
+      post.addComments(comments.filter(comment => comment.postId === post.id));
+      post.addUsers(users.filter(user => user.id === post.userId));
+      return post;
     });
   }
 }
