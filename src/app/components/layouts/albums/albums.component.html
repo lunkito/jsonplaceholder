@@ -1,7 +1,7 @@
 <h2 class="mat-display-1">Albums component</h2>
 
 <ul *ngIf="albums$ | async; let albums; else loading;">
-  <li *ngFor="let album of albums | slice:1:10">
+  <li *ngFor="let album of albums | slice:0:10">
     <app-album-miniature [album]="album"></app-album-miniature>
   </li>
 </ul>

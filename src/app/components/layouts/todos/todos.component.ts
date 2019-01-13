@@ -1,9 +1,9 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { throwError } from 'rxjs';
 import { Todo } from 'src/app/models/todo';
 import { JsonService } from 'src/app/services/json.service';
 import { catchError, finalize } from 'rxjs/operators';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-todos',

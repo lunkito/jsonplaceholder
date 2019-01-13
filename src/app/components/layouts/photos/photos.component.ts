@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Photo } from 'src/app/models/photo';
 import { JsonService } from 'src/app/services/json.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-photos',
@@ -12,7 +11,6 @@ export class PhotosComponent implements OnInit {
 
   public selected: Photo[];
   public photos: Photo[];
-  public input: string;
 
   constructor(private service: JsonService) {}
 
@@ -27,8 +25,9 @@ export class PhotosComponent implements OnInit {
   }
 
   applyFilter(value: string) {
-    this.selected = this.photos.filter(photo => {   
-      return photo.title.includes(value);
+    this.selected = this.photos.filter(photo => {
+      const caseSensitive = new RegExp(value, 'i');
+      return photo.title.match(caseSensitive);
     });
   }
 }

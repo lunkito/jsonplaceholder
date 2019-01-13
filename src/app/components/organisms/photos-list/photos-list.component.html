@@ -1,5 +1,5 @@
 <ul>
-  <li *ngFor="let photo of photos | slice:1:max">
+  <li *ngFor="let photo of photos | slice:0:max">
     <app-photo-miniature [photo]="photo"></app-photo-miniature>
   </li>
 </ul>
