@@ -21,7 +21,6 @@ import { PhotosComponent } from './components/layouts/photos/photos.component';
 import { PostsComponent } from './components/layouts/posts/posts.component';
 import { UsersComponent } from './components/layouts/users/users.component';
 import { AlbumsComponent } from './components/layouts/albums/albums.component';
-import { AlbumMiniatureComponent } from './components/layouts/albums/album-miniature/album-miniature.component';
 import { PostComponent } from './components/layouts/post/post.component';
 import { AlbumComponent } from './components/layouts/album/album.component';
 
@@ -34,6 +33,7 @@ import { AlbumPhotosComponent } from './components/organisms/album-photos/album-
 import { PhotosListComponent } from './components/organisms/photos-list/photos-list.component';
 
 import { PhotoMiniatureComponent } from './components/molecules/photo-miniature/photo-miniature.component';
+import { AlbumMiniatureComponent } from './components/organisms/album-miniature/album-miniature.component';
 
 @NgModule({
   declarations: [
