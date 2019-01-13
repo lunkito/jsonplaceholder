@@ -6,6 +6,7 @@ import { User } from 'src/app/models/user';
 import { zip, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Converter } from 'src/app/converter/converter';
+import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-comments',
@@ -36,10 +37,13 @@ export class CommentsComponent implements OnInit {
 
   private addCommentsAndUsersToPosts(posts: Post[], comments: Comment[], users: User[]): Post[] {
     return posts.map(postResponse => {
-      const post = Converter.postResponseToPost(postResponse);
-      post.addComments(comments.filter(comment => comment.postId === post.id));
-      post.addUsers(users.filter(user => user.id === post.userId));
-      return post;
+      postResponse.comments = comments.filter(comment => comment.postId === postResponse.id);
+      postResponse.users = users.filter(user => user.id === postResponse.userId);
+      
+      // const post = Converter.postResponseToPost(postResponse);
+      // post.setComments(comments.filter(comment => comment.postId === post.id));
+      // post.setUsers(users.filter(user => user.id === post.userId));
+      return postResponse;
     });
   }
 }

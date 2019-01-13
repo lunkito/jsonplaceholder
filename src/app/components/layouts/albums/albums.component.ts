@@ -28,9 +28,10 @@ export class AlbumsComponent implements OnInit {
 
   private addPhotosToAlbums(albums: Album[], photos: Photo[]): Album[] {
     return albums.map(albumResponse => {
-      const album = Converter.albumResponseToAlbum(albumResponse);
-      album.addPhotos(photos.filter(photo => photo.albumId === album.id));
-      return album;
+      albumResponse.photos = photos.filter(photo => photo.albumId === albumResponse.id);
+      // const album = Converter.albumResponseToAlbum(albumResponse);
+      // album.setPhotos(photos.filter(photo => photo.albumId === album.id));
+      return albumResponse;
     });
   }
 

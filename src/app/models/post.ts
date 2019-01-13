@@ -9,11 +9,11 @@ export class Post {
   public comments?: Comment[];
   public users?: User[];
 
-  public addUsers(users: User[]) {
+  public setUsers(users: User[]) {
     this.users = users;
   }
 
-  public addComments(comments: Comment[]) {
+  public setComments(comments: Comment[]) {
     this.comments = comments;
   }
 }

@@ -6,7 +6,7 @@ export class Album {
   title:	string;
   photos?: Photo[];
 
-  addPhotos(photos: Photo[]) {
+  setPhotos(photos: Photo[]) {
     this.photos = photos;
   }
 }
