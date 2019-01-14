@@ -5,8 +5,4 @@ export class Album {
   id: number;
   title:	string;
   photos?: Photo[];
-
-  setPhotos(photos: Photo[]) {
-    this.photos = photos;
-  }
 }

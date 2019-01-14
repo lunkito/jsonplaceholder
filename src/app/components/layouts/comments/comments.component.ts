@@ -5,8 +5,6 @@ import { Post } from 'src/app/models/post';
 import { User } from 'src/app/models/user';
 import { zip, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Converter } from 'src/app/converter/converter';
-import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-comments',
@@ -39,10 +37,6 @@ export class CommentsComponent implements OnInit {
     return posts.map(postResponse => {
       postResponse.comments = comments.filter(comment => comment.postId === postResponse.id);
       postResponse.users = users.filter(user => user.id === postResponse.userId);
-      
-      // const post = Converter.postResponseToPost(postResponse);
-      // post.setComments(comments.filter(comment => comment.postId === post.id));
-      // post.setUsers(users.filter(user => user.id === post.userId));
       return postResponse;
     });
   }

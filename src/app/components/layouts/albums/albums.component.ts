@@ -3,8 +3,7 @@ import { JsonService } from 'src/app/services/json.service';
 import { Observable, zip } from 'rxjs';
 import { Album } from 'src/app/models/album';
 import { Photo } from 'src/app/models/photo';
-import { map, tap } from 'rxjs/operators';
-import { Converter } from 'src/app/converter/converter';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-albums',
@@ -29,8 +28,6 @@ export class AlbumsComponent implements OnInit {
   private addPhotosToAlbums(albums: Album[], photos: Photo[]): Album[] {
     return albums.map(albumResponse => {
       albumResponse.photos = photos.filter(photo => photo.albumId === albumResponse.id);
-      // const album = Converter.albumResponseToAlbum(albumResponse);
-      // album.setPhotos(photos.filter(photo => photo.albumId === album.id));
       return albumResponse;
     });
   }

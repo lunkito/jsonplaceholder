@@ -8,12 +8,4 @@ export class Post {
   public body: string;
   public comments?: Comment[];
   public users?: User[];
-
-  public setUsers(users: User[]) {
-    this.users = users;
-  }
-
-  public setComments(comments: Comment[]) {
-    this.comments = comments;
-  }
 }
