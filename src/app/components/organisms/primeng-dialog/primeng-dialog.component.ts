@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-primeng-dialog',
@@ -9,10 +9,16 @@ export class PrimengDialogComponent {
 
   @Input()
   public text: string;
+
+  @Input()
   public display = false;
 
-  showDialog() {
-    this.display = true;
+  @Output()
+  public eventClick: EventEmitter<boolean> = new EventEmitter();
+
+  toggleDialog() {
+    this.display = !this.display;
+    this.eventClick.emit(this.display);
   }
 
 }

@@ -20,8 +20,8 @@ export class PrimengComponent implements OnInit {
       .subscribe((album: Album) => this.text = album.title);
   }
 
-  showDialog() {
-    this.display = !this.display;
+  toggleDialog(display: boolean) {
+    this.display = display;
   }
 
 }
