@@ -1,0 +1,10 @@
+<p-dialog header="Godfather I" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{background: '#ccc', maxWidth: '400px'}"
+  [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+  <span>{{ text }}</span>
+  <p-footer>
+    <button type="button" (click)="display=false">Ok</button>
+  </p-footer>
+</p-dialog>
+
+
+<button type="button" (click)="showDialog()">Click</button>

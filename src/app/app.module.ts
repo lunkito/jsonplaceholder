@@ -9,6 +9,7 @@ import { RoutingModule } from './modules/routing/routing.module';
 
 import { JsonService } from './services/json.service';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { DialogModule } from 'primeng/dialog';
 
 import { AppComponent } from './app.component';
 
@@ -23,6 +24,7 @@ import { UsersComponent } from './components/layouts/users/users.component';
 import { AlbumsComponent } from './components/layouts/albums/albums.component';
 import { PostComponent } from './components/layouts/post/post.component';
 import { AlbumComponent } from './components/layouts/album/album.component';
+import { PrimengComponent } from './components/layouts/primeng/primeng.component';
 
 import { TableComponent } from './components/organisms/table/table.component';
 import { PostMiniatureComponent } from './components/organisms/post-miniature/post-miniature.component';
@@ -31,9 +33,10 @@ import { PhotoComponent } from './components/layouts/photo/photo.component';
 import { UserComponent } from './components/layouts/user/user.component';
 import { AlbumPhotosComponent } from './components/organisms/album-photos/album-photos.component';
 import { PhotosListComponent } from './components/organisms/photos-list/photos-list.component';
+import { AlbumMiniatureComponent } from './components/organisms/album-miniature/album-miniature.component';
 
 import { PhotoMiniatureComponent } from './components/molecules/photo-miniature/photo-miniature.component';
-import { AlbumMiniatureComponent } from './components/organisms/album-miniature/album-miniature.component';
+import { PrimengDialogComponent } from './components/organisms/primeng-dialog/primeng-dialog.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,9 @@ import { AlbumMiniatureComponent } from './components/organisms/album-miniature/
     TableComponent,
     PostCommentsComponent,
     AlbumPhotosComponent,
-    PhotosListComponent
+    PhotosListComponent,
+    PrimengComponent,
+    PrimengDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +73,8 @@ import { AlbumMiniatureComponent } from './components/organisms/album-miniature/
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
-    LayoutModule
+    LayoutModule,
+    DialogModule
   ],
   entryComponents: [DeletAllDialogComponent],
   providers: [JsonService],

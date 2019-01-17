@@ -14,6 +14,7 @@ import { PostComponent } from 'src/app/components/layouts/post/post.component';
 import { AlbumComponent } from 'src/app/components/layouts/album/album.component';
 import { PhotoComponent } from 'src/app/components/layouts/photo/photo.component';
 import { UserComponent } from 'src/app/components/layouts/user/user.component';
+import { PrimengComponent } from 'src/app/components/layouts/primeng/primeng.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'users/:id', component: UserComponent },
   { path: 'height', component: HeigthEqualsWidthComponent },
   { path: 'audio', component: AudioComponent },
+  { path: 'primeng', component: PrimengComponent },
 ];
 
 @NgModule({
