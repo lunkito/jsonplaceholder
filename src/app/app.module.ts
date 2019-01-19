@@ -37,6 +37,8 @@ import { AlbumMiniatureComponent } from './components/organisms/album-miniature/
 
 import { PhotoMiniatureComponent } from './components/molecules/photo-miniature/photo-miniature.component';
 import { PrimengDialogComponent } from './components/organisms/primeng-dialog/primeng-dialog.component';
+import { CustomNgModelComponent } from './components/organisms/custom-ng-model/custom-ng-model.component';
+import { NgmodelComponent } from './components/layouts/ngmodel/ngmodel.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,9 @@ import { PrimengDialogComponent } from './components/organisms/primeng-dialog/pr
     AlbumPhotosComponent,
     PhotosListComponent,
     PrimengComponent,
-    PrimengDialogComponent
+    PrimengDialogComponent,
+    CustomNgModelComponent,
+    NgmodelComponent
   ],
   imports: [
     BrowserModule,

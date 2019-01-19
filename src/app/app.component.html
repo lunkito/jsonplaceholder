@@ -1,9 +1,10 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <button mat-button routerLink="/">Home</button>
-    <button mat-button [matMenuTriggerFor]="menu">Json Place Holder  <mat-icon>arrow_drop_down</mat-icon></button>
-    <mat-menu #menu="matMenu">
-      <button routerLink="users" mat-menu-item >Users</button>
+
+    <button mat-button [matMenuTriggerFor]="jsonMenu">Json Place Holder  <mat-icon>arrow_drop_down</mat-icon></button>
+    <mat-menu #jsonMenu="matMenu">
+      <button routerLink="users" mat-menu-item>Users</button>
       <button routerLink="posts" mat-menu-item>Posts</button>
       <button routerLink="comments" mat-menu-item>Comments</button>
       <button routerLink="albums" mat-menu-item>Albums</button>
@@ -11,6 +12,11 @@
       <button routerLink="todos" mat-menu-item>Todos</button>
     </mat-menu>
     
+    <button mat-button [matMenuTriggerFor]="angularMenu">Angular<mat-icon>arrow_drop_down</mat-icon></button>
+    <mat-menu #angularMenu="matMenu">
+      <button routerLink="ngmodel" mat-menu-item> NgModel </button>
+    </mat-menu>
+
     <a routerLink="height" mat-button>Heigh = Width</a>
     <a routerLink="audio" mat-button>Audio</a>
     <a routerLink="primeng" mat-button>PrimeNg</a>
