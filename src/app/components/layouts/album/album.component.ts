@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { JsonService } from 'src/app/services/json.service';
-import { Observable, zip, of } from 'rxjs';
+import { Observable, zip } from 'rxjs';
 import { Album } from 'src/app/models/album';
 import { ActivatedRoute } from '@angular/router';
 import { Photo } from 'src/app/models/photo';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-album',
@@ -21,7 +20,7 @@ export class AlbumComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
     this.album$ = this.jsonService.getAlbumById(id);
-    
+
     this.zipAlbumAndPhotos()
       .subscribe(([album, photos]) => this.photos = this.filterAlbumPhotos(album, photos));
   }

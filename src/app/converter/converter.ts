@@ -1,16 +1,17 @@
 import { Album } from '../models/album';
 import { Post } from '../models/post';
 
-export class Converter {
-   static albumResponseToAlbum = (albumResponse: Album): Album => {
+// ABSTRACT CLASS
+export abstract class Converter {
+   public static albumResponseToAlbum = (albumResponse: Album): Album => {
       return Converter.convertResponseToObject(albumResponse) as Album;
    }
 
-   static postResponseToPost(postResponse: Post) {
+   public static postResponseToPost = (postResponse: Post) => {
       return Converter.convertResponseToObject(postResponse) as Post;
    }
 
-   private static convertResponseToObject(input: object) {
+   private static convertResponseToObject = (input: object) => {
       const output = {};
       for (const key in input) {
          if (input.hasOwnProperty(key)) {
@@ -19,4 +20,25 @@ export class Converter {
       }
       return output;
    }
+}
+
+// MODULE
+export module ConverterModule {
+   export const albumResponseToAlbum = (albumResponse: Album): Album => {
+      return convertResponseToObject(albumResponse) as Album;
+   };
+
+   export const postResponseToPost = (postResponse: Post) => {
+      return convertResponseToObject(postResponse) as Post;
+   };
+
+   const convertResponseToObject = (input: object) => {
+      const output = {};
+      for (const key in input) {
+         if (input.hasOwnProperty(key)) {
+            output[key] = input[key];
+         }
+      }
+      return output;
+   };
 }
