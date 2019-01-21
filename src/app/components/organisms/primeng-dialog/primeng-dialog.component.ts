@@ -11,14 +11,14 @@ export class PrimengDialogComponent {
   public text: string;
 
   @Input()
-  public display = false;
+  public visible = false;
 
   @Output()
-  public eventClick: EventEmitter<boolean> = new EventEmitter();
+  public visibleChange: EventEmitter<boolean> = new EventEmitter();
 
   toggleDialog() {
-    this.display = !this.display;
-    this.eventClick.emit(this.display);
+    this.visible = !this.visible;
+    this.visibleChange.emit(this.visible);
   }
 
 }

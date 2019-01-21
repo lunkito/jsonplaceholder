@@ -9,7 +9,7 @@ import { Album } from 'src/app/models/album';
 })
 export class PrimengComponent implements OnInit {
   
-  public display = false;
+  public visible = false;
   public text: string;
   
   constructor(private jsonService: JsonService) {}
@@ -19,9 +19,4 @@ export class PrimengComponent implements OnInit {
       .getAlbumById(1)
       .subscribe((album: Album) => this.text = album.title);
   }
-
-  toggleDialog(display: boolean) {
-    this.display = display;
-  }
-
 }

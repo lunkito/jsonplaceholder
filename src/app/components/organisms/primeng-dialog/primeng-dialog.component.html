@@ -1,8 +1,8 @@
-<p-dialog header="Godfather I" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{background: '#ccc', maxWidth: '400px'}"
+<p-dialog header="Godfather I" [(visible)]="visible" [modal]="true" [responsive]="true" [style]="{background: '#ccc', maxWidth: '400px'}"
   [minY]="70" [maximizable]="true" [baseZIndex]="10000">
   <span>{{ text }}</span>
   <p-footer>
-    <button type="button" (click)="display=false">Ok</button>
+    <button type="button" (click)="visible=false">Ok</button>
   </p-footer>
 </p-dialog>
 
