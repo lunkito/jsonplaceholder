@@ -22,6 +22,7 @@ export class TableComponent implements OnChanges {
     }
   }
 
+  // Esto es matar la mosca a cañonazos. No hace falta sacar las keys mas que una vez y al final rows y data son iguales
   private convertDataToProps() {
     this.data.forEach(element => {
       this.keys = Object.keys(element);      
