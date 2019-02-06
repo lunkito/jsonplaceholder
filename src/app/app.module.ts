@@ -6,10 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RoutingModule } from './modules/routing/routing.module';
+import { DialogModule } from 'primeng/dialog';
 
 import { JsonService } from './services/json.service';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
-import { DialogModule } from 'primeng/dialog';
+import { LinkDirective } from './directives/link.directive';
 
 import { AppComponent } from './app.component';
 
@@ -25,6 +26,7 @@ import { AlbumsComponent } from './components/layouts/albums/albums.component';
 import { PostComponent } from './components/layouts/post/post.component';
 import { AlbumComponent } from './components/layouts/album/album.component';
 import { PrimengComponent } from './components/layouts/primeng/primeng.component';
+import { NgmodelComponent } from './components/layouts/ngmodel/ngmodel.component';
 
 import { TableComponent } from './components/organisms/table/table.component';
 import { PostMiniatureComponent } from './components/organisms/post-miniature/post-miniature.component';
@@ -34,11 +36,10 @@ import { UserComponent } from './components/layouts/user/user.component';
 import { AlbumPhotosComponent } from './components/organisms/album-photos/album-photos.component';
 import { PhotosListComponent } from './components/organisms/photos-list/photos-list.component';
 import { AlbumMiniatureComponent } from './components/organisms/album-miniature/album-miniature.component';
-
-import { PhotoMiniatureComponent } from './components/molecules/photo-miniature/photo-miniature.component';
 import { PrimengDialogComponent } from './components/organisms/primeng-dialog/primeng-dialog.component';
 import { CustomNgModelComponent } from './components/organisms/custom-ng-model/custom-ng-model.component';
-import { NgmodelComponent } from './components/layouts/ngmodel/ngmodel.component';
+
+import { PhotoMiniatureComponent } from './components/molecules/photo-miniature/photo-miniature.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { NgmodelComponent } from './components/layouts/ngmodel/ngmodel.component
     PrimengComponent,
     PrimengDialogComponent,
     CustomNgModelComponent,
-    NgmodelComponent
+    NgmodelComponent,
+    LinkDirective
   ],
   imports: [
     BrowserModule,
