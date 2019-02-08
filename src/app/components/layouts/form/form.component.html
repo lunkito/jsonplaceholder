@@ -1,0 +1,49 @@
+<h1 class="mat-display-1">Forms components</h1>
+
+<h2 class="mat-h2">Template driven Form</h2>
+<form #templateForm="ngForm">
+  <mat-form-field >
+    <input matInput placeholder="Name" [(ngModel)]="mockUser.name" name="name">
+  </mat-form-field>
+
+  <mat-form-field >
+    <input matInput placeholder="User Name" [(ngModel)]="mockUser.username" name="username">
+  </mat-form-field>
+
+  <mat-form-field >
+    <input matInput placeholder="Phone" [(ngModel)]="mockUser.phone" name="phone">
+  </mat-form-field>
+
+  <mat-form-field >
+    <input matInput placeholder="Email" [(ngModel)]="mockUser.email" name="email">
+  </mat-form-field>
+
+  <mat-form-field >
+    <input matInput placeholder="Web" [(ngModel)]="mockUser.website" name="website">
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
+
+<h2 class="mat-h2">Reactive Form</h2>
+<form>
+  <mat-form-field >
+    <input matInput placeholder="Name">
+  </mat-form-field>
+
+  <mat-form-field >
+    <input matInput placeholder="User Name">
+  </mat-form-field>
+
+  <mat-form-field >
+    <input matInput placeholder="Phone">
+  </mat-form-field>
+
+  <mat-form-field >
+    <input matInput placeholder="Email">
+  </mat-form-field>
+
+  <mat-form-field >
+    <input matInput placeholder="Web">
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

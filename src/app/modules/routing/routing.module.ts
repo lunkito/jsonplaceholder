@@ -16,6 +16,7 @@ import { PhotoComponent } from 'src/app/components/layouts/photo/photo.component
 import { UserComponent } from 'src/app/components/layouts/user/user.component';
 import { PrimengComponent } from 'src/app/components/layouts/primeng/primeng.component';
 import { NgmodelComponent } from 'src/app/components/layouts/ngmodel/ngmodel.component';
+import { FormComponent } from 'src/app/components/layouts/form/form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'audio', component: AudioComponent },
   { path: 'primeng', component: PrimengComponent },
   { path: 'ngmodel', component: NgmodelComponent },
+  { path: 'forms', component: FormComponent },
 ];
 
 @NgModule({

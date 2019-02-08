@@ -40,6 +40,7 @@ import { PrimengDialogComponent } from './components/organisms/primeng-dialog/pr
 import { CustomNgModelComponent } from './components/organisms/custom-ng-model/custom-ng-model.component';
 
 import { PhotoMiniatureComponent } from './components/molecules/photo-miniature/photo-miniature.component';
+import { FormComponent } from './components/layouts/form/form.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { PhotoMiniatureComponent } from './components/molecules/photo-miniature/
     PrimengDialogComponent,
     CustomNgModelComponent,
     NgmodelComponent,
-    LinkDirective
+    LinkDirective,
+    FormComponent
   ],
   imports: [
     BrowserModule,

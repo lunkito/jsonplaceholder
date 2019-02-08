@@ -2,9 +2,9 @@
   [minY]="70" [maximizable]="true" [baseZIndex]="10000">
   <span>{{ text }}</span>
   <p-footer>
-    <button type="button" (click)="visible=false">Ok</button>
+    <button mat-raised-button color="primary" (click)="visible=false">Ok</button>
   </p-footer>
 </p-dialog>
 
 
-<button type="button" (click)="toggleDialog()">Click</button>
+<button mat-raised-button color="primary" (click)="toggleDialog()">Click</button>
